@@ -34,7 +34,7 @@ export default {
         api.onPageChange((url) => {
           let tagRegex = /^\/tag[s]?\/(.*)/;
 
-          if (settings.enable_tag_cloud) {
+         // if (settings.enable_tag_cloud) {
             if (this.discoveryList || url.match(tagRegex)) {
               // tag pages aren't discovery lists for some reason?
               // checking for discoveryList makes sure it's not loading on user profiles and other topic lists
@@ -98,7 +98,7 @@ export default {
             } else {
               component.set("isDiscoveryList", false);
             }
-          }
+          //}
         });
       });
     }
