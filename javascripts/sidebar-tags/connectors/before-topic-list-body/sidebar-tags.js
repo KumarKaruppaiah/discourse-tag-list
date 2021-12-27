@@ -27,14 +27,14 @@ export default {
   setupComponent(attrs, component) {
     component.set("hideSidebar", true);
     debugger;
-    document.querySelector(".list-controls").classList.add("with-sidebar");
+    document.querySelector(".topic-list").classList.add("with-sidebar");
 
     if (!this.site.mobileView) {
       withPluginApi("0.11", (api) => {
         api.onPageChange((url) => {
           let tagRegex = /^\/tag[s]?\/(.*)/;
 
-          if (1==1) {
+          if (settings.enable_tag_cloud) {
             if (this.discoveryList || url.match(tagRegex)) {
               // tag pages aren't discovery lists for some reason?
               // checking for discoveryList makes sure it's not loading on user profiles and other topic lists
