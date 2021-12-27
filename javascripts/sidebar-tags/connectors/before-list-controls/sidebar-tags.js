@@ -26,6 +26,7 @@ function tagCount(a, b) {
 export default {
   setupComponent(attrs, component) {
     component.set("hideSidebar", true);
+    debugger;
     document.querySelector(".list-controls").classList.add("with-sidebar");
 
     if (!this.site.mobileView) {
@@ -71,7 +72,7 @@ export default {
                   } else {
                     // if a category doesn't have a tag list, don't show tags
                     document
-                      .querySelector(".topic-list")
+                      .querySelector(".list-controls")
                       .classList.remove("with-sidebar");
                     return;
                   }
