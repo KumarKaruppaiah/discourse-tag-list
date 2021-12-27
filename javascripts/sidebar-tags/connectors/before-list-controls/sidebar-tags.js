@@ -26,7 +26,7 @@ function tagCount(a, b) {
 export default {
   setupComponent(attrs, component) {
     component.set("hideSidebar", true);
-    document.querySelector(".topic-list").classList.add("with-sidebar");
+    document.querySelector(".list-controls").classList.add("with-sidebar");
 
     if (!this.site.mobileView) {
       withPluginApi("0.11", (api) => {
