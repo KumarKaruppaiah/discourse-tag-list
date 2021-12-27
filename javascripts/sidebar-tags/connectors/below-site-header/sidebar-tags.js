@@ -27,7 +27,7 @@ export default {
   setupComponent(attrs, component) {
     component.set("hideSidebar", true);
     debugger;
-    document.querySelector(".above-main-container-outlet").classList.add("with-sidebar");
+    document.querySelector(".above-site-header-outlet").classList.add("with-sidebar");
 
     if (!this.site.mobileView) {
       withPluginApi("0.11", (api) => {
