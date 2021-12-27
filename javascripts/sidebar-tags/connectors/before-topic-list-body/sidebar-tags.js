@@ -27,14 +27,14 @@ export default {
   setupComponent(attrs, component) {
     component.set("hideSidebar", true);
     debugger;
-    document.querySelector(".above-site-header-outlet").classList.add("with-sidebar");
+    document.querySelector(".before-topic-list").classList.add("with-sidebar");
 
     if (!this.site.mobileView) {
       withPluginApi("0.11", (api) => {
         api.onPageChange((url) => {
           let tagRegex = /^\/tag[s]?\/(.*)/;
 
-         // if (settings.enable_tag_cloud) {
+          if (settings.enable_tag_cloud) {
             if (this.discoveryList || url.match(tagRegex)) {
               // tag pages aren't discovery lists for some reason?
               // checking for discoveryList makes sure it's not loading on user profiles and other topic lists
@@ -98,7 +98,7 @@ export default {
             } else {
               component.set("isDiscoveryList", false);
             }
-          //}
+          }
         });
       });
     }
